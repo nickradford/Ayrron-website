@@ -1,4 +1,11 @@
 Ayrron::Application.routes.draw do
+
+  match '/application.js' => Stitch::Server.new(:paths => ["app/assets/javascripts", "vendor/assets/javascripts"])
+  
+
+  resources :books
+  resources :gallery
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

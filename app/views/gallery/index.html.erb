@@ -1,0 +1,14 @@
+<ul>
+<% @gallery.each do |g| %>
+	<li><%= g.title %></li>
+		<% if g.images.length > 0 %>
+		<li>
+			<ul>
+				<% g.images.each do |i| %>
+					<li> <%= i.title %> </li>
+				<% end %>
+			</ul>
+		</li>
+		<% end %>
+<% end %>
+</ul>
