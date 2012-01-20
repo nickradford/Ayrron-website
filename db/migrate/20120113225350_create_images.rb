@@ -4,6 +4,7 @@ class CreateImages < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.date :completed_on
+      t.integer :gallery_id, :null => false
 
       t.timestamps
     end

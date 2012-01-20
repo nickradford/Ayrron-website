@@ -35,7 +35,9 @@ group :test do
   gem 'turn', '0.8.2', :require => false
 end
 
-# group :test, :development do
+group :test, :development do
+  gem 'annotate', '~> 2.4.1.beta' 
+end
 #   gem 'cucumber-rails'
 #   gem 'database_cleaner'
 # end

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120113231746) do
     t.string   "title"
     t.text     "description"
     t.date     "completed_on"
+    t.integer  "gallery_id",   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_path"
