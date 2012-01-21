@@ -7,8 +7,8 @@ module.exports = class Gallery extends Backbone.View
     @_images = @obj.images
     init_images @
     
-    @el.mouseenter () => @extraInfo.slideDown()
-    @el.mouseleave () => @extraInfo.slideUp()  
+    @el.mouseenter () => @elDescription.slideDown(400)
+    @el.mouseleave () => @elDescription.slideUp(400)  
 
        
   render: (within)-> 
@@ -16,7 +16,7 @@ module.exports = class Gallery extends Backbone.View
     if within?
       within.append @el
       
-    @extraInfo = $ "li[data-gallery-id='#{@obj.id}'] span.gallery_num_images"
+    @elDescription = $ "li[data-gallery-id='#{@obj.id}'] div.gallery_description"
     @imageHolder = $ "li[data-gallery-id='#{@obj.id}'] div.gallery_image"
     
     # Put an image in!
@@ -36,8 +36,14 @@ module.exports = class Gallery extends Backbone.View
       '''
       <div class='gallery_image'></div> 
       <div class='gallery_title'><%= tmpl.data.title %></div>
-      <span class='gallery_num_images'><%= tmpl.data.images.length %>
-      <% if (tmpl.data.images.length === 1) { %> image <% } else { %> images <% } %></span>      
+      <div class='gallery_description'>
+        <div>
+          <%= tmpl.data.images.length %><% if (tmpl.data.images.length === 1) { %> image <% } else { %> images <% } %>
+        </div>
+        <div>
+          <%= tmpl.data.description %>
+        </div>
+        </div> 
       '''
       
 init_images = (obj) -> 

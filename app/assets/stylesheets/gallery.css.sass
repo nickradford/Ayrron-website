@@ -28,9 +28,10 @@ ul.gallery_container
   
   li.gallery
     position: relative
-    display: inline-block
+    float: left    
     margin-right: 20px
     overflow: hidden
+    width: 400px
     
     div.gallery_image
       height: 300px
@@ -41,17 +42,15 @@ ul.gallery_container
     div.gallery_title
       text-align: center
       font-size: 16pt
-      padding-top: 6px
+      padding: 6px 0 4px 0
       height: 32px
       background: darken(white, 10%)
     
-    span.gallery_num_images
-      position: absolute
-      top: 45%
-      left: 0
-      right: 0
-      height: 10%
+    div.gallery_description
+      display: block
       text-align: center
-      background: rgba(255, 255, 255, 0.4)
-      
+      background: darken(white, 10%)
       display: none
+      white-space: normal
+      padding-bottom: 4px
+      color: lighten($font, 10%)
