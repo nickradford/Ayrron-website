@@ -4,11 +4,11 @@
 	<script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
     <script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.6/underscore-min.js"></script>
     <script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script>
-	<script src="http://ayrron.dev/assets/libs.js"></script>
-	<script src="http://ayrron.dev/application.js"></script>
+	<script src="/assets/libs.js"></script>
+	<script src="/application.js"></script>
 	<script>
 	$(function() {
-		$.getJSON("http://ayrron.dev/gallery.json", function(data) {
+		$.getJSON("/gallery.json", function(data) {
 			_(data).each( function(gallery) {
 				Gallery = require('gallery');
 				g = new Gallery(gallery);

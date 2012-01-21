@@ -12,7 +12,9 @@ body
   height: 100%
   
   h1.title
+    font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", sans-serif
     font-weight: 100
+    font-size: 48pt
     letter-spacing: 3px
     position: fixed
 
@@ -28,11 +30,13 @@ ul.gallery_container
     position: relative
     display: inline-block
     margin-right: 20px
+    overflow: hidden
     
     div.gallery_image
       height: 300px
       width: 400px
       background: darken(white, 25%)
+      overflow: hidden
       
     div.gallery_title
       text-align: center
@@ -40,3 +44,14 @@ ul.gallery_container
       padding-top: 6px
       height: 32px
       background: darken(white, 10%)
+    
+    span.gallery_num_images
+      position: absolute
+      top: 45%
+      left: 0
+      right: 0
+      height: 10%
+      text-align: center
+      background: rgba(255, 255, 255, 0.4)
+      
+      display: none

@@ -1,0 +1,62 @@
+/* line 4, ../../app/assets/stylesheets/gallery.css.sass */
+body {
+  background: #f2f2f2;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+  color: #333333;
+  height: 100%;
+}
+/* line 14, ../../app/assets/stylesheets/gallery.css.sass */
+body h1.title {
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  font-size: 48pt;
+  letter-spacing: 3px;
+  position: fixed;
+}
+
+/* line 21, ../../app/assets/stylesheets/gallery.css.sass */
+ul.gallery_container {
+  position: absolute;
+  list-style-type: none;
+  padding-left: 0;
+  top: 25%;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+/* line 29, ../../app/assets/stylesheets/gallery.css.sass */
+ul.gallery_container li.gallery {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  overflow: hidden;
+}
+/* line 35, ../../app/assets/stylesheets/gallery.css.sass */
+ul.gallery_container li.gallery div.gallery_image {
+  height: 300px;
+  width: 400px;
+  background: #bfbfbf;
+  overflow: hidden;
+}
+/* line 41, ../../app/assets/stylesheets/gallery.css.sass */
+ul.gallery_container li.gallery div.gallery_title {
+  text-align: center;
+  font-size: 16pt;
+  padding-top: 6px;
+  height: 32px;
+  background: #e6e6e6;
+}
+/* line 48, ../../app/assets/stylesheets/gallery.css.sass */
+ul.gallery_container li.gallery span.gallery_num_images {
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  height: 10%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  display: none;
+}
