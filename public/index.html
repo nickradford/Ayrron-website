@@ -12,16 +12,15 @@
 			_(data).each( function(gallery) {
 				Gallery = require('gallery');
 				g = new Gallery(gallery);
-				g.render($('body'));
+				g.render($('.gallery_container'));
 			})
 		});
 	});
 	</script>
+	<link rel='stylesheet' href='/assets/application.css'/>
 </head>
 <body>
-	
-	
-	
-	
+	<h1 class='title'>Ayrron Smeltzer</h1>
+	<ul class='gallery_container'></ul>
 </body>
 </html>

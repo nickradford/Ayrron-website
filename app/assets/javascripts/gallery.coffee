@@ -3,7 +3,7 @@ Image    = require 'image'
 
 module.exports = class Gallery extends Backbone.View  
   constructor: (@obj) -> 
-    @el = $ "<div class='gallery' data-gallery-id='#{@obj.id}'></div>"
+    @el = $ "<li class='gallery' data-gallery-id='#{@obj.id}'></li>"
     @_images = @obj.images
     init_images @
     
@@ -12,17 +12,15 @@ module.exports = class Gallery extends Backbone.View
     if within?
       within.append @el
       
-    @elImages = $ "div[data-gallery-id='#{@obj.id}'] ul.images"
-    _(@images).each (image) =>
-      image.render(@elImages)
+    # @elImages = $ "div[data-gallery-id='#{@obj.id}'] ul.images"
+    # _(@images).each (image) =>
+    #   image.render(@elImages)
   
   class Tmpl extends Template
     root:
       '''
-      <h1><%= tmpl.data.title %></h1>
-      <h2><%= tmpl.data.description %></h2>
-      <ul class='images'></ul>
-      <hr/>
+      <div class='gallery_image'></div> 
+      <div class='gallery_title'><%= tmpl.data.title %></div>
       '''
       
 init_images = (obj) -> 
