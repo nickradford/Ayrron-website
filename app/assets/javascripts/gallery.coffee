@@ -7,8 +7,11 @@ module.exports = class Gallery extends Backbone.View
     @_images = @obj.images
     init_images @
     
+    # Wire up events.
     @el.mouseenter () => @elDescription.slideDown(400)
-    @el.mouseleave () => @elDescription.slideUp(400)  
+    @el.mouseleave () => @elDescription.slideUp(400)
+    
+    @el.click () => console.log 'el.click', @obj.title
 
        
   render: (within)-> 
