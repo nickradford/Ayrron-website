@@ -10,6 +10,9 @@ body
   width: 90%
   color: $font
   height: 100%
+
+  div.container
+    overflow: hidden
   
   h1.title
     font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", sans-serif
@@ -24,13 +27,13 @@ ul.gallery_container
   padding-left: 0 
   top: 25%
   white-space: nowrap
-  overflow-x: scroll
+  overflow-x: visible
   
   li.gallery
     position: relative
-    float: left    
+    display: inline-block
     margin-right: 20px
-    overflow: hidden
+    vertical-align: top
     width: 400px
     
     div.gallery_image
@@ -47,7 +50,6 @@ ul.gallery_container
       background: darken(white, 10%)
     
     div.gallery_description
-      display: block
       text-align: center
       background: darken(white, 10%)
       display: none

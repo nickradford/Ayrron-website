@@ -21,10 +21,8 @@ module.exports = class Gallery extends Backbone.View
     
     # Put an image in!
     fixImage = => 
-      console.log '@images', @images
       return if @images.length is 0
       image = @images[0]
-      console.log 'image', image
       image.render @imageHolder
     
     fixImage()
