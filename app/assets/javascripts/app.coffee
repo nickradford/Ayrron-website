@@ -1,32 +1,67 @@
-Gallery = require 'gallery'
+GalleryView = require 'gallery'
 
-module.exports = class Application extends Backbone.View
+# class GalleryView extends Backbone.View
+
+class Gallery extends Backbone.Model
   constructor: (args) -> 
-      return unless args.title?
-      return unless args.elTitle?
-      return unless args.dataUrl?
+    super args
+    @view = new GalleryView @attributes
+  
+
+class GalleryCollection extends Backbone.Collection
+  model: Gallery
+  url: '/gallery.json'
+  
+class GalleryListView extends Backbone.View
+  constructor: (@galleries) -> 
+    @el = $('div.container')
+    console.log '@', @
+  
+  render: -> 
+    @el.children('ul').html ''
+    _(@galleries).each (gallery) => 
+      gallery.view.render $ 'ul.gallery_container'
+
+
+module.exports = class Application extends Backbone.Router
+  routes: 
+    '/index' : 'index'
+    '/gallery/:title' : 'gallery'
+    '*other': 'index'
+  
+  constructor: (args) -> 
+      super args
+      @attributes = args
+      @galleries = new GalleryCollection()
+      @render()
       
-      @title            = args.title
-      @elTitle          = args.elTitle
-      @dataUrl          = args.dataUrl
-      @galleries        = []
-      @elGallery        = $ 'ul.gallery_container'
-      @elGalleryDetails = $ 'div.app_gallery_info'
+      galleryContainer = $ 'ul.gallery_container'
       
       # Wire up events.
-      @elTitle.click => 
-        elements = $ 'div.app_gallery_info, ul.gallery_container'
-        console.log 'elements', elements
-        elements.fadeOut 400, => 
-          @elGallery.html ''
-          _(@galleries).each (gallery) =>
-            @elGallery.append gallery.el
-          @elGallery.fadeIn 600
-        
-  init: -> 
+      $('h1.title').bind 'click', (e) => 
+        galleryContainer.fadeOut 400, =>
+          galleryContainer.html ''
+          window.app.navigate '/index'
+          galleryInfo = $('.app_gallery_info')
+          galleryInfo.fadeOut 400, => 
+            galleryInfo.html ''
+            galleryInfo.show()
+            @index()
+            galleryContainer.fadeIn 400
       
-  render: () ->  
-      @elTitle.html @title
-      $.getJSON @dataUrl, (data) => 
-        _(data).each (gallery) =>
-           @galleries.push new Gallery(gallery).render @elGallery
+  render: -> 
+    $('h1.title').html @attributes.title
+ 
+  
+  
+  index: -> 
+    console.log 'rendering'
+    @galleries.fetch 
+      success: => new GalleryListView(@galleries.models).render()
+      error: => console.log 'Error'
+
+  gallery: (title) -> 
+    @galleries.fetch
+      success: => 
+        gal = _(@galleries.models).find (gallery) -> return gallery.get('title') is title 
+        gal.view.renderGallery $ 'ul.gallery_container'

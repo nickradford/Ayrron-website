@@ -3,9 +3,9 @@
 <head>
 	<title>Ayrron Smeltzer</title>
 	<link rel='stylesheet' href='/assets/application.css'/>
+	<script src="/assets/libs.js"></script>
     <script src="/underscore.js"></script>
     <script src="/backbone.js"></script>
-	<script src="/assets/libs.js"></script>
 	<script src="/application.js"></script>
 </head>
 <body>
@@ -20,12 +20,8 @@
 	<script>
 	$(function() {
 		var Application = require('app');
-		window.app = new Application({
-			title: "Ayrron Smeltzer", 
-			elTitle: $('h1.title'),
-			dataUrl: '/gallery.json'
-		});
-		app.render();
+		window.app = new Application({title:"Ayrron Smeltzer"});
+		Backbone.history.start();
 	});
 	</script>
 </body>

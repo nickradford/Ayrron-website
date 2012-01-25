@@ -1,24 +1,26 @@
 Template = require 'template'
 Image    = require 'image'
 
-module.exports = class Gallery extends Backbone.View  
+module.exports = class GalleryView extends Backbone.View  
   constructor: (@obj) -> 
     @el = $ "<li class='gallery' data-gallery-id='#{@obj.id}'></li>"
     @_images = @obj.images
     init_images @
+    console.log 'Gallery', @
     
     # Wire up events.
     @el.mouseenter () => @elDescription.slideDown(400)
     @el.mouseleave () => @elDescription.slideUp(400)
     
-    @el.on 'click', -> alert 'Click'
-    # @el.click () => 
-    #   @within.fadeOut 600, =>
-    #     galleryInfo = $('.app_gallery_info')
-    #     galleryInfo.html @tmpl.info()
-    #     galleryInfo.fadeIn 400, =>
-    #       @within.html @tmpl.gallery()
-    #       @within.fadeIn 400
+    # @el.on 'click', -> alert 'Click'
+    @el.click () => 
+      @within.fadeOut 600, =>
+        window.app.navigate '/gallery/' + @obj.title
+        galleryInfo = $('.app_gallery_info')
+        galleryInfo.html @tmpl.info()
+        galleryInfo.fadeIn 400, =>
+          @within.html @tmpl.gallery()
+          @within.fadeIn 400
       
       
   reset: -> 
@@ -47,7 +49,9 @@ module.exports = class Gallery extends Backbone.View
     
     @
     
-    
+  renderGallery: (@within) -> 
+    @tmpl = new Tmpl(data: @obj, images: @images)
+    @within.html @tmpl.gallery()
     
 
   
