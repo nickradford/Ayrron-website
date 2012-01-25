@@ -28,8 +28,8 @@ body div.header h1.title {
 /* line 30, ../../app/assets/stylesheets/gallery.css.sass */
 body div.header div#spinner {
   display: inline-block;
-  margin-left: 30px;
-  margin-bottom: 18px;
+  padding-left: 42px;
+  padding-bottom: 34px;
 }
 /* line 35, ../../app/assets/stylesheets/gallery.css.sass */
 body div.container {
