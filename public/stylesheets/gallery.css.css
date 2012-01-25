@@ -5,62 +5,99 @@ body {
   font-weight: 300;
   margin: 0 auto;
   padding: 0;
-  width: 90%;
+  width: 100%;
   color: #333333;
   height: 100%;
 }
-/* line 14, ../../app/assets/stylesheets/gallery.css.sass */
-body div.container {
-  overflow: hidden;
+/* line 16, ../../app/assets/stylesheets/gallery.css.sass */
+body div.header {
+  display: inline;
+  position: fixed;
+  margin: 36px 0 0 36px;
+  width: 90%;
 }
-/* line 17, ../../app/assets/stylesheets/gallery.css.sass */
-body h1.title {
+/* line 22, ../../app/assets/stylesheets/gallery.css.sass */
+body div.header h1.title {
   font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", sans-serif;
   font-weight: 100;
   font-size: 48pt;
   letter-spacing: 3px;
-  position: fixed;
+  display: inline;
 }
-
-/* line 24, ../../app/assets/stylesheets/gallery.css.sass */
-ul.gallery_container {
+/* line 29, ../../app/assets/stylesheets/gallery.css.sass */
+body div.container {
+  margin-left: 36px;
+  position: absolute;
+  top: 25%;
+}
+/* line 35, ../../app/assets/stylesheets/gallery.css.sass */
+body div.container ul.gallery_container {
   position: absolute;
   list-style-type: none;
   padding-left: 0;
-  top: 25%;
   white-space: nowrap;
   overflow-x: visible;
   cursor: pointer;
 }
-/* line 33, ../../app/assets/stylesheets/gallery.css.sass */
-ul.gallery_container li.gallery {
+/* line 43, ../../app/assets/stylesheets/gallery.css.sass */
+body div.container ul.gallery_container li.gallery {
   position: relative;
   display: inline-block;
   margin-right: 20px;
   vertical-align: top;
   width: 400px;
 }
-/* line 40, ../../app/assets/stylesheets/gallery.css.sass */
-ul.gallery_container li.gallery div.gallery_image {
+/* line 50, ../../app/assets/stylesheets/gallery.css.sass */
+body div.container ul.gallery_container li.gallery div.gallery_image {
   height: 300px;
   width: 400px;
   background: #bfbfbf;
   overflow: hidden;
 }
-/* line 46, ../../app/assets/stylesheets/gallery.css.sass */
-ul.gallery_container li.gallery div.gallery_title {
+/* line 56, ../../app/assets/stylesheets/gallery.css.sass */
+body div.container ul.gallery_container li.gallery div.gallery_title {
   text-align: center;
   font-size: 16pt;
   padding: 6px 0 4px 0;
   height: 32px;
   background: #e6e6e6;
 }
-/* line 53, ../../app/assets/stylesheets/gallery.css.sass */
-ul.gallery_container li.gallery div.gallery_description {
+/* line 63, ../../app/assets/stylesheets/gallery.css.sass */
+body div.container ul.gallery_container li.gallery div.gallery_description {
   text-align: center;
   background: #e6e6e6;
   display: none;
   white-space: normal;
   padding-bottom: 4px;
   color: #4d4d4d;
+}
+/* line 71, ../../app/assets/stylesheets/gallery.css.sass */
+body div.container ul.gallery_container li.gallery div.gallery_display {
+  display: none;
+}
+/* line 74, ../../app/assets/stylesheets/gallery.css.sass */
+body div.container ul.gallery_container li.gallery_full_image {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: top;
+}
+/* line 81, ../../app/assets/stylesheets/gallery.css.sass */
+body div.app_gallery_info {
+  position: fixed;
+  text-align: center;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  font-size: 24pt;
+}
+/* line 91, ../../app/assets/stylesheets/gallery.css.sass */
+body div.app_gallery_info div.gallery_title {
+  font-size: 24pt;
+}
+/* line 94, ../../app/assets/stylesheets/gallery.css.sass */
+body div.app_gallery_info div.gallery_description {
+  font-size: 16pt;
 }

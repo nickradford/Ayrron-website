@@ -11,29 +11,48 @@ module.exports = class Gallery extends Backbone.View
     @el.mouseenter () => @elDescription.slideDown(400)
     @el.mouseleave () => @elDescription.slideUp(400)
     
-    @el.click () => console.log 'el.click', @obj.title
-
+    @el.on 'click', -> alert 'Click'
+    # @el.click () => 
+    #   @within.fadeOut 600, =>
+    #     galleryInfo = $('.app_gallery_info')
+    #     galleryInfo.html @tmpl.info()
+    #     galleryInfo.fadeIn 400, =>
+    #       @within.html @tmpl.gallery()
+    #       @within.fadeIn 400
+      
+      
+  reset: -> 
+    @within.fadeOut()
+    @within.html('')
        
-  render: (within)-> 
-    @el.html new Tmpl(data: @obj, images: @images).root()
-    if within?
-      within.append @el
+  render: (@within)-> 
+    @tmpl = new Tmpl(data: @obj, images: @images)
+    @el.hide()
+    @el.html @tmpl.overview()
+    if @within?
+      @within.append @el
       
     @elDescription = $ "li[data-gallery-id='#{@obj.id}'] div.gallery_description"
     @imageHolder = $ "li[data-gallery-id='#{@obj.id}'] div.gallery_image"
     
     # Put an image in!
-    fixImage = => 
-      return if @images.length is 0
+    fixImage = (callback) => 
+      return callback?() if @images.length is 0
       image = @images[0]
       image.render @imageHolder
+      
+      callback?()
     
-    fixImage()
+    fixImage => @el.fadeIn(1000)
+    
+    @
+    
+    
     
 
   
   class Tmpl extends Template
-    root:
+    overview:
       '''
       <div class='gallery_image'></div> 
       <div class='gallery_title'><%= tmpl.data.title %></div>
@@ -46,6 +65,20 @@ module.exports = class Gallery extends Backbone.View
         </div>
         </div> 
       '''
+    info:
+      '''
+      <div class='gallery_title'><%= tmpl.data.title %></div>
+      <div class='gallery_description'><%= tmpl.data.description %></div>
+      '''
+    gallery:
+      '''
+      <% _(tmpl.images).each(function(image) { %>
+        <%= image.renderGallery() %>
+      <% }); %>
+      '''
+      
+      
+      
       
 init_images = (obj) -> 
   obj.images = []

@@ -7,53 +7,89 @@ body
   font-weight: 300
   margin: 0 auto
   padding: 0
-  width: 90%
+  width: 100%
   color: $font
   height: 100%
 
-  div.container
-    overflow: hidden
+
   
-  h1.title
+  div.header
+    display: inline
+    position: fixed
+    margin: 36px 0 0 36px
+    width: 90%
+  
+    h1.title
+      font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", sans-serif
+      font-weight: 100
+      font-size: 48pt
+      letter-spacing: 3px
+      display: inline
+      
+  div.container
+    margin-left: 36px
+    position: absolute
+    top: 25%
+    
+
+    ul.gallery_container
+      position: absolute
+      list-style-type: none
+      padding-left: 0 
+      white-space: nowrap
+      overflow-x: visible
+      cursor: pointer
+  
+      li.gallery
+        position: relative
+        display: inline-block
+        margin-right: 20px
+        vertical-align: top
+        width: 400px
+    
+        div.gallery_image
+          height: 300px
+          width: 400px
+          background: darken(white, 25%)
+          overflow: hidden
+      
+        div.gallery_title
+          text-align: center
+          font-size: 16pt
+          padding: 6px 0 4px 0
+          height: 32px
+          background: darken(white, 10%)
+    
+        div.gallery_description
+          text-align: center
+          background: darken(white, 10%)
+          display: none
+          white-space: normal
+          padding-bottom: 4px
+          color: lighten($font, 10%)
+
+        div.gallery_display
+          display: none
+        
+      li.gallery_full_image
+        position: relative
+        display: inline-block
+        margin-right: 20px
+        vertical-align: top
+      
+                
+  div.app_gallery_info
+    position: fixed
+    text-align: center
+    bottom: 24px
+    left: 0
+    right: 0
     font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", sans-serif
     font-weight: 100
-    font-size: 48pt
-    letter-spacing: 3px
-    position: fixed
+    font-size: 24pt
 
-ul.gallery_container
-  position: absolute
-  list-style-type: none
-  padding-left: 0 
-  top: 25%
-  white-space: nowrap
-  overflow-x: visible
-  cursor: pointer
-  
-  li.gallery
-    position: relative
-    display: inline-block
-    margin-right: 20px
-    vertical-align: top
-    width: 400px
-    
-    div.gallery_image
-      height: 300px
-      width: 400px
-      background: darken(white, 25%)
-      overflow: hidden
-      
     div.gallery_title
-      text-align: center
-      font-size: 16pt
-      padding: 6px 0 4px 0
-      height: 32px
-      background: darken(white, 10%)
-    
+      font-size: 24pt
+
     div.gallery_description
-      text-align: center
-      background: darken(white, 10%)
-      display: none
-      white-space: normal
-      padding-bottom: 4px
-      color: lighten($font, 10%)
+      font-size: 16pt

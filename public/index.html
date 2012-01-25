@@ -2,28 +2,31 @@
 <html>
 <head>
 	<title>Ayrron Smeltzer</title>
-	<script src="http://ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js"></script>
-    <script src="http://ajax.cdnjs.com/ajax/libs/underscore.js/1.1.6/underscore-min.js"></script>
-    <script src="http://ajax.cdnjs.com/ajax/libs/backbone.js/0.3.3/backbone-min.js"></script>
+    <script src="/underscore.js"></script>
+    <script src="/backbone.js"></script>
 	<script src="/assets/libs.js"></script>
 	<script src="/application.js"></script>
-	<script>
-	$(function() {
-		$.getJSON("/gallery.json", function(data) {
-			_(data).each( function(gallery) {
-				Gallery = require('gallery');
-				g = new Gallery(gallery);
-				g.render($('.gallery_container'));
-			})
-		});
-	});
-	</script>
 	<link rel='stylesheet' href='/assets/application.css'/>
 </head>
 <body>
-	<h1 class='title'>Ayrron Smeltzer <span id='gallery_loading'></span></h1>
+	<div class='header'>
+		<h1 class='title'></h1>
+	</div>
 	<div class='container'>
 		<ul class='gallery_container'></ul>
+		<div class='gallery_display'></div>
 	</div>
+	<div class='app_gallery_info'></div>
+	<script>
+	$(function() {
+		var Application = require('app');
+		window.app = new Application({
+			title: "Ayrron Smeltzer", 
+			elTitle: $('h1.title'),
+			dataUrl: '/gallery.json'
+		});
+		app.render();
+	});
+	</script>
 </body>
 </html>
