@@ -17,9 +17,11 @@ class GalleryListView extends Backbone.View
     @el = $('div.container')
   
   render: -> 
-    @el.children('ul').html ''
-    _(@galleries).each (gallery) => 
-      gallery.view.render $ 'ul.gallery_container'
+    @el.fadeOut 400, => 
+      @el.children('ul').html ''
+      _(@galleries).each (gallery) => 
+        gallery.view.render $ 'ul.gallery_container'
+      @el.fadeIn 400
 
 
 module.exports = class Application extends Backbone.Router

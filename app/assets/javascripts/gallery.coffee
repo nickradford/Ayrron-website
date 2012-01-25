@@ -28,7 +28,6 @@ module.exports = class GalleryView extends Backbone.View
        
   render: (@within)-> 
     @tmpl = new Tmpl(data: @obj, images: @images)
-    @el.hide()
     @el.html @tmpl.overview()
     if @within?
       @within.append @el
@@ -44,7 +43,7 @@ module.exports = class GalleryView extends Backbone.View
       
       callback?()
     
-    fixImage => @el.fadeIn(1000)
+    fixImage()
     
     @
     
