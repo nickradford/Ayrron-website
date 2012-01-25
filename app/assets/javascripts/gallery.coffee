@@ -6,7 +6,6 @@ module.exports = class GalleryView extends Backbone.View
     @el = $ "<li class='gallery' data-gallery-id='#{@obj.id}'></li>"
     @_images = @obj.images
     init_images @
-    console.log 'Gallery', @
     
     # Wire up events.
     @el.mouseenter () => @elDescription.slideDown(400)

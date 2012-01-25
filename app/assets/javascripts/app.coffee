@@ -15,7 +15,6 @@ class GalleryCollection extends Backbone.Collection
 class GalleryListView extends Backbone.View
   constructor: (@galleries) -> 
     @el = $('div.container')
-    console.log '@', @
   
   render: -> 
     @el.children('ul').html ''
@@ -55,7 +54,6 @@ module.exports = class Application extends Backbone.Router
   
   
   index: -> 
-    console.log 'rendering'
     @galleries.fetch 
       success: => new GalleryListView(@galleries.models).render()
       error: => console.log 'Error'
