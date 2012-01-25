@@ -26,12 +26,18 @@ body div.header h1.title {
   cursor: pointer;
 }
 /* line 30, ../../app/assets/stylesheets/gallery.css.sass */
+body div.header div#spinner {
+  display: inline-block;
+  margin-left: 30px;
+  margin-bottom: 18px;
+}
+/* line 35, ../../app/assets/stylesheets/gallery.css.sass */
 body div.container {
   margin-left: 36px;
   position: absolute;
   top: 25%;
 }
-/* line 36, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 41, ../../app/assets/stylesheets/gallery.css.sass */
 body div.container ul.gallery_container {
   position: absolute;
   list-style-type: none;
@@ -40,7 +46,7 @@ body div.container ul.gallery_container {
   overflow-x: visible;
   cursor: pointer;
 }
-/* line 44, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 49, ../../app/assets/stylesheets/gallery.css.sass */
 body div.container ul.gallery_container li.gallery {
   position: relative;
   display: inline-block;
@@ -48,14 +54,14 @@ body div.container ul.gallery_container li.gallery {
   vertical-align: top;
   width: 400px;
 }
-/* line 51, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 56, ../../app/assets/stylesheets/gallery.css.sass */
 body div.container ul.gallery_container li.gallery div.gallery_image {
   height: 300px;
   width: 400px;
   background: #bfbfbf;
   overflow: hidden;
 }
-/* line 57, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 62, ../../app/assets/stylesheets/gallery.css.sass */
 body div.container ul.gallery_container li.gallery div.gallery_title {
   text-align: center;
   font-size: 16pt;
@@ -63,7 +69,7 @@ body div.container ul.gallery_container li.gallery div.gallery_title {
   height: 32px;
   background: #e6e6e6;
 }
-/* line 64, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 69, ../../app/assets/stylesheets/gallery.css.sass */
 body div.container ul.gallery_container li.gallery div.gallery_description {
   text-align: center;
   background: #e6e6e6;
@@ -72,18 +78,18 @@ body div.container ul.gallery_container li.gallery div.gallery_description {
   padding-bottom: 4px;
   color: #595959;
 }
-/* line 72, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 77, ../../app/assets/stylesheets/gallery.css.sass */
 body div.container ul.gallery_container li.gallery div.gallery_display {
   display: none;
 }
-/* line 75, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 80, ../../app/assets/stylesheets/gallery.css.sass */
 body div.container ul.gallery_container li.gallery_full_image {
   position: relative;
   display: inline-block;
   margin-right: 20px;
   vertical-align: top;
 }
-/* line 82, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 87, ../../app/assets/stylesheets/gallery.css.sass */
 body div.app_gallery_info {
   position: fixed;
   text-align: center;
@@ -94,11 +100,11 @@ body div.app_gallery_info {
   font-weight: 100;
   font-size: 24pt;
 }
-/* line 92, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 97, ../../app/assets/stylesheets/gallery.css.sass */
 body div.app_gallery_info div.gallery_title {
   font-size: 24pt;
 }
-/* line 95, ../../app/assets/stylesheets/gallery.css.sass */
+/* line 100, ../../app/assets/stylesheets/gallery.css.sass */
 body div.app_gallery_info div.gallery_description {
   font-size: 16pt;
 }

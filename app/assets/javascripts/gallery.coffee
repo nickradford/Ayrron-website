@@ -12,14 +12,16 @@ module.exports = class GalleryView extends Backbone.View
     @el.mouseleave () => @elDescription.slideUp(400)
     
     # @el.on 'click', -> alert 'Click'
-    @el.click () => 
-      @within.fadeOut 600, =>
-        window.app.navigate '/gallery/' + @obj.title
-        galleryInfo = $('.app_gallery_info')
-        galleryInfo.html @tmpl.info()
-        galleryInfo.fadeIn 400, =>
-          @within.html @tmpl.gallery()
-          @within.fadeIn 400
+    @el.click () =>
+      app.spin => 
+        @within.fadeOut 600, =>
+          window.app.navigate '/gallery/' + @obj.title
+          galleryInfo = $('.app_gallery_info')
+          galleryInfo.html @tmpl.info()
+          galleryInfo.fadeIn 400, =>
+            @within.html @tmpl.gallery()
+            @within.fadeIn 400, => 
+              app.stop()
       
       
   reset: -> 
