@@ -11,4 +11,8 @@
 
 class Gallery < ActiveRecord::Base
   has_many :images
+  
+  def preview_image
+    images[ rand(images.size) ]
+  end
 end

@@ -1,0 +1,10 @@
+[
+  <% @galleries.each do |g| %>
+  {
+    'id': <%= g.id %>,
+    'title': '<%= g.title %>',
+    'description': '<%= g.description %>',
+    'preview_image': { <%= g.preview_image.image.url %> } 
+  }<%= puts ',' if @galleries.length > 1 %>
+  <% end %>
+]

@@ -1,9 +1,11 @@
 Ayrron::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   match '/application.js' => Stitch::Server.new(:paths => ["app/assets/javascripts", "vendor/assets/javascripts"])
   
-
-  resources :books
   resources :gallery
 
   # The priority is based upon order of creation:

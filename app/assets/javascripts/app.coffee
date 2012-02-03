@@ -79,8 +79,8 @@ module.exports = class Application extends Backbone.Router
         success: => 
           new GalleryListView(@galleries.models).render()
           @stop()
-        error: => 
-          console.log 'Error'
+        error: (error) => 
+          console.log 'Error', error
           @stop()
 
   gallery: (title) -> 

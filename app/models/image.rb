@@ -9,9 +9,14 @@
 #  gallery_id   :integer
 #  created_at   :datetime
 #  updated_at   :datetime
-#  image_path   :string(255)
 #
 
 class Image < ActiveRecord::Base
   belongs_to :gallery
+  
+  has_attached_file :image, :styles => {:thumb=> "100x100#", :small  => "400x400>" }
+  
+  def asset_url
+    image.url
+  end
 end

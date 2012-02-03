@@ -1,9 +1,17 @@
 $bg      : darken(white, 5%)
 $font    : lighten(black, 25%)
 
+$fntHelveticaLight : "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif
+$fntHelveticaUltraLight : "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", sans-serif
+
+
+@font-face 
+  font-family: "Pigeon"
+  src: url("Pigeon.otf")
+
 body
   background: $bg
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif
+  font-family: $fntHelveticaLight
   font-weight: 300
   margin: 0 auto
   padding: 0
@@ -20,7 +28,7 @@ body
     width: 90%
   
     h1.title
-      font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", sans-serif
+      font-family: $fntHelveticaUltraLight
       font-weight: 100
       font-size: 48pt
       letter-spacing: 3px
