@@ -2,12 +2,12 @@ class GalleryController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    @gallery = Gallery.all
+    @galleries = Gallery.all
     
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @gallery.to_json(:include => :images) }
-    end
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.json { render json: @gallery.to_json(:include => :images) }
+    # end
   end
 
   def show

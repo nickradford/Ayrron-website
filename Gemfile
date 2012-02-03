@@ -18,11 +18,12 @@ group :assets do
 end
 
 gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
+gem 'compass'
+gem 'jbuilder'
 gem 'jquery-rails'
+gem "meta_search",    '>= 1.1.0.pre'
 gem 'paperclip'
 gem 'stitch-rb'
-gem 'compass'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
