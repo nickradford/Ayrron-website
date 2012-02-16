@@ -5,6 +5,7 @@ ActiveAdmin.register Image do
     column :preview do |i|
       image_tag i.image.url, :width => 200
     end
+    default_actions
   end
   
   form :html => { :enctype => "multipart/form-data" } do |f|
