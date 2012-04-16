@@ -1,7 +1,7 @@
 Template = require 'template'
 Image    = require 'image'
 
-module.exports = class GalleryView extends Backbone.View  
+module.exports = class GalleryView extends Backbone.View
   constructor: (@obj) -> 
     @el = $ "<li class='gallery' data-gallery-id='#{@obj.id}'></li>"
     @_images = @obj.images
